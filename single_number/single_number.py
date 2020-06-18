@@ -2,10 +2,16 @@
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
-def single_number(arr):
-    # Your code here
 
-    pass
+
+def single_number(arr):
+    cache = []
+    for item in arr:
+        if item not in cache:
+            cache.append(item)
+        else:
+            cache.remove(item)
+    return cache[0]
 
 
 if __name__ == '__main__':
